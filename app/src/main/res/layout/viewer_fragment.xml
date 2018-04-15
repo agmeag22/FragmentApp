@@ -11,19 +11,6 @@
         android:textSize="24sp"
         android:textColor="#000000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textId2"
-        android:layout_below="@+id/textId"
-        android:layout_marginTop="50dp"
-        android:textSize="24sp"
-        android:textColor="#000000"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textId"
-        android:layout_marginBottom="100dp"/>
 
 </RelativeLayout>

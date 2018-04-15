@@ -64,7 +64,7 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
             Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
             Bundle bundle = new Bundle();
-            bundle.putString("PLANET:", planets[i]);
+            bundle.putSerializable("PLANET:", planets[i]);
             FragmentViewer frag = new FragmentViewer();
             frag.setArguments(bundle);
 
