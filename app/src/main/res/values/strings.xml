@@ -12,4 +12,38 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+    <string-array name="Planets_radius">
+        <item>695.508 km</item>
+        <item>2.440 km</item>
+        <item>6.052 km</item>
+        <item>6.371 km</item>
+        <item>3.390 km</item>
+        <item>69.911 km</item>
+        <item>58.232 km</item>
+        <item>25.362 km</item>
+        <item>24.622 km</item>
+    </string-array>
+    <string-array name="Planets_gravity">
+        <item>Unknown</item>
+        <item>3,7 m/s²</item>
+        <item>8,87 m/s²</item>
+        <item>9,807 m/s²</item>
+        <item>3,711 m/s²</item>
+        <item>24,79 m/s²</item>
+        <item>10,44 m/s²</item>
+        <item>8,69 m/s²</item>
+        <item>Approximately Earth's</item>
+    </string-array>
+    <string-array name="Planets_Mass">
+        <item></item>
+        <item>1,989 × 10^30 kg</item>
+        <item>3,285 × 10^23 kg</item>
+        <item>4,867 × 10^24 kg</item>
+        <item>5,972 × 10^24 kg</item>
+        <item>6,390 × 10^23 kg</item>
+        <item>1,898 × 10^27 kg</item>
+        <item>5,683 × 10^26 kg</item>
+        <item>8,681 × 10^25 kg</item>
+        <item>1,024 × 10^26 kg</item>
+    </string-array>
 </resources>

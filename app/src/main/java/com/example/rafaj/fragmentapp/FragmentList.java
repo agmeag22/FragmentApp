@@ -5,6 +5,8 @@ import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +19,9 @@ import android.widget.Toast;
  * Created by rafaj on 8/4/2018.
  */
 
-public class FragmentList extends ListFragment implements AdapterView.OnItemClickListener{
 
+public class FragmentList extends ListFragment implements AdapterView.OnItemClickListener{
+    private Planet[] planets;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,8 +37,16 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
                 R.array.Planets, android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
+        String[] pname = getResources().getStringArray(R.array.Planets);
+        String[] pradius = getResources().getStringArray(R.array.Planets_radius);
+        String[] pgravity = getResources().getStringArray(R.array.Planets_gravity);
+        String[] pmass = getResources().getStringArray(R.array.Planets_Mass);
+        planets = new Planet[getResources().getStringArray(R.array.Planets).length];
+        TypedArray pimage=getResources().obtainTypedArray(R.array.images);
+        for (int n=0; n<getResources().getStringArray(R.array.Planets).length;n++ ) {
+        planets[n]=new Planet(pname[n],pradius[n],pgravity[n],pmass[n],pimage.getResourceId(n,0));
+        }
     }
-
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -44,14 +55,16 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             Intent newIntent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
             newIntent.setAction(Intent.ACTION_SEND);
-            newIntent.setType("text/plain");
-            newIntent.putExtra(Intent.EXTRA_TEXT, adapterView.getItemAtPosition(i).toString());
+            newIntent.setType("*/*");
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("PLANET:",planets[i]);
+            newIntent.putExtras(bundle);
             startActivity(newIntent);
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
             Bundle bundle = new Bundle();
-            bundle.putString("KEY", adapterView.getItemAtPosition(i).toString());
+            bundle.putString("PLANET:", planets[i]);
             FragmentViewer frag = new FragmentViewer();
             frag.setArguments(bundle);
 
