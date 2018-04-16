@@ -37,6 +37,7 @@ public class FragmentViewer extends Fragment {
         Planet intentText = (Planet) bundle.getSerializable("PLANET");
 
         if (bundle != null){
+
             view_image.setImageResource(intentText.getImage());
             text_name.setText(intentText.getName());
             text_radius.setText(intentText.getSize());

@@ -16,12 +16,15 @@
         />
     <TextView
         android:id="@+id/name"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/image"
         android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="#e5000000"
+        />
 
     <TextView
         android:id="@+id/radius"
@@ -29,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/name"
-        android:background="#fff"
+        android:textColor="#e5000000"
         android:textStyle="bold"
         android:textSize="20sp"
         />
@@ -42,6 +45,7 @@
         android:layout_below="@+id/radius"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:textColor="#e5000000"
         />
     <TextView
         android:id="@+id/mass"
@@ -50,6 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/gravity"
         android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textColor="#e5000000"/>
 
 </RelativeLayout>
