@@ -57,14 +57,14 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
             newIntent.setAction(Intent.ACTION_SEND);
             newIntent.setType("*/*");
             Bundle bundle=new Bundle();
-            bundle.putSerializable("PLANET:",planets[i]);
+            bundle.putSerializable("PLANET",planets[i]);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
             Bundle bundle = new Bundle();
-            bundle.putSerializable("PLANET:", planets[i]);
+            bundle.putSerializable("PLANET", planets[i]);
             FragmentViewer frag = new FragmentViewer();
             frag.setArguments(bundle);
 

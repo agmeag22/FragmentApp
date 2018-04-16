@@ -31,9 +31,9 @@ public class Main2Activity extends AppCompatActivity {
         String intentType = callingIntent.getType();
 
         if (Intent.ACTION_SEND.equals(intentAction) && intentType != null){
-            if (intentType.equals("text/plain")){
+
                 handleReceivedText(callingIntent);
-            }
+
         }
 
     }
